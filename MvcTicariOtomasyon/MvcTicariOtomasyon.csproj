@@ -126,7 +126,9 @@
     </Compile>
     <Compile Include="Models\Class\Category.cs" />
     <Compile Include="Models\Class\Customer.cs" />
+    <Compile Include="Models\Class\Department.cs" />
     <Compile Include="Models\Class\Employee.cs" />
+    <Compile Include="Models\Class\Invoice.cs" />
     <Compile Include="Models\Class\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
