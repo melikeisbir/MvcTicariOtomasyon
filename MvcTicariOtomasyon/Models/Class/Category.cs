@@ -11,5 +11,6 @@ namespace MvcTicariOtomasyon.Models.Class
         [Key]
         public int KategoriID { get; set; }
         public string KategoriAd { get; set; }
+        public ICollection<Product> Products { get; set; } //bire çok ilişki için
     }
 }

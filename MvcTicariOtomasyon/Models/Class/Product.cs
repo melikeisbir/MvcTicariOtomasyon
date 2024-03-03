@@ -17,5 +17,8 @@ namespace MvcTicariOtomasyon.Models.Class
         public decimal SatisFiyat { get; set;}
         public bool Durum { get; set;}
         public string UrunGorsel { get; set;}
+        public Category Category { get; set; }
+        public SalesTransaction SalesTransaction { get; set; }
+
     }
 }

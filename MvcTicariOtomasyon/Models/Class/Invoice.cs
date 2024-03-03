@@ -17,5 +17,6 @@ namespace MvcTicariOtomasyon.Models.Class
         public DateTime Saat { get; set; }
         public string TeslimEden { get; set; }
         public string TeslimAlan { get; set; }
+        public ICollection<InvoiceItem> InvoiceItems { get; set; }
     }
 }

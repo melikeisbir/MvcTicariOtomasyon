@@ -11,5 +11,6 @@ namespace MvcTicariOtomasyon.Models.Class
         [Key]
         public int DepartmanID { get; set; }
         public string DepartmanAd { get; set; }
+        public ICollection<Employee> Employees { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace MvcTicariOtomasyon.Models.Class
         public int Miktar { get; set; }
         public decimal BirimFiyat { get; set; }
         public decimal Tutar { get; set; }
+        public Invoice Invoice { get; set; }
     }
 }

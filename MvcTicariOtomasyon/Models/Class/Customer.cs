@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MvcTicariOtomasyon.Models.Class
 {
-    public class Customer
+    public class Customer //cari
     {
         [Key]
         public int MusteriID { get; set; }
@@ -14,5 +14,7 @@ namespace MvcTicariOtomasyon.Models.Class
         public string MusteriSoyad { get; set; }
         public string MusteriSehir { get; set; }
         public string MusteriMail { get; set; }
+        public SalesTransaction SalesTransaction { get; set; }
+
     }
 }
