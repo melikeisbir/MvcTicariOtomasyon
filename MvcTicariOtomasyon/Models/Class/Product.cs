@@ -25,7 +25,7 @@ namespace MvcTicariOtomasyon.Models.Class
         [StringLength(250)]
         public string UrunGorsel { get; set;}
         public Category Category { get; set; }
-        public SalesTransaction SalesTransaction { get; set; }
+        public ICollection<SalesTransaction> SalesTransactions { get; set; }
 
     }
 }

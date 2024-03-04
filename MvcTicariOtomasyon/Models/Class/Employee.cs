@@ -20,7 +20,7 @@ namespace MvcTicariOtomasyon.Models.Class
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string PersonelGorsel { get; set; }
-        public SalesTransaction SalesTransaction { get; set; }
+        public ICollection<SalesTransaction> SalesTransactions { get; set; }
         public Department Department { get; set; }
     }
 }
