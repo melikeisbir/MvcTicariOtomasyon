@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcTicariOtomasyon.Models.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace MvcTicariOtomasyon.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
+        Context c = new Context();
         public ActionResult Index()
         {
-            return View();
+            var degerler = c.Categories.ToList();
+            return View(degerler);
         }
     }
 }
