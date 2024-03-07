@@ -17,23 +17,28 @@ namespace MvcTicariOtomasyon.Controllers
             return View(degerler);
         }
         [HttpGet]
-        public ActionResult AddCategory()
+        public ActionResult KategoriEkle()
         {
             return View();
         }
-        [HttpPost]  
-        public ActionResult AddCategory(Category k)
+        [HttpPost]
+        public ActionResult KategoriEkle(Category k)
         {
             c.Categories.Add(k);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult DeleteCategory(int id)
+        public ActionResult KategoriSil(int id)
         {
-            var ctg = c.Categories.Find(id);
-            c.Categories.Remove(ctg);
+            var ktg = c.Categories.Find(id);
+            c.Categories.Remove(ktg);
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult KategoriGetir(int id)
+        {
+            var kategori = c.Categories.Find(id);
+            return View("KategoriGetir", kategori);
         }
     }
 }
