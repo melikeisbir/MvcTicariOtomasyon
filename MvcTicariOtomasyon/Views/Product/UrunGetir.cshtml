@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm("UrunGuncelle", "Product", FormMethod.Post))
 {
+    @Html.HiddenFor(x=>x.UrunID)
     @Html.LabelFor(x => x.UrunAd)
     @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
     <br />
