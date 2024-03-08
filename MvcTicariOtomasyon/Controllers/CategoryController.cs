@@ -40,5 +40,12 @@ namespace MvcTicariOtomasyon.Controllers
             var kategori = c.Categories.Find(id);
             return View("KategoriGetir", kategori);
         }
+        public ActionResult KategoriGuncelle(Category k)
+        {
+            var ktgr = c.Categories.Find(k.KategoriID);
+            ktgr.KategoriAd=k.KategoriAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
