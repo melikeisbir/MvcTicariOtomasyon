@@ -13,12 +13,19 @@ namespace MvcTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var urunler = c.Products.Where(x=>x.Durum==true).ToList();
+            var urunler = c.Products.Where(x => x.Durum == true).ToList();
             return View(urunler);
         }
         [HttpGet]
         public ActionResult YeniUrun()
         {
+            List<SelectListItem> deger1 = (from x in c.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.KategoriAd,
+                                               Value = x.KategoriID.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
             return View();
         }
         [HttpPost]
