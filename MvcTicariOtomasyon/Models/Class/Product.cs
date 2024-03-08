@@ -24,7 +24,7 @@ namespace MvcTicariOtomasyon.Models.Class
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string UrunGorsel { get; set;}
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
 
     }
