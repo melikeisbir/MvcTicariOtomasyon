@@ -42,5 +42,17 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UrunGetir(int id)
+        {
+            List<SelectListItem> deger1 = (from x in c.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.KategoriAd,
+                                               Value = x.KategoriID.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
+            var urundeger = c.Products.Find(id);
+            return View("UrunGetir", urundeger);
+        }
     }
 }
