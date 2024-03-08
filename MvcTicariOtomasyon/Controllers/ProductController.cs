@@ -13,7 +13,7 @@ namespace MvcTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var urunler = c.Products.ToList();
+            var urunler = c.Products.Where(x=>x.Durum==true).ToList();
             return View(urunler);
         }
         [HttpGet]
@@ -25,6 +25,13 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult YeniUrun(Product p)
         {
             c.Products.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult UrunSil(int id)
+        {
+            var deger = c.Products.Find(id);
+            deger.Durum = false;
             c.SaveChanges();
             return RedirectToAction("Index");
         }
