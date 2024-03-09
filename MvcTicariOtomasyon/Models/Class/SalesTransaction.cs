@@ -14,8 +14,11 @@ namespace MvcTicariOtomasyon.Models.Class
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
-        public Product Product { get; set; }
-        public Customer Customer { get; set; }
-        public Employee Employee { get; set; }
+        public int UrunID { get; set; }
+        public int CariID { get; set; }
+        public int PersonelID { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }
