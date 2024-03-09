@@ -51,7 +51,8 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanDetay(int id)
         {
-            return View();
+            var degerler = c.Employees.Where(x=>x.DepartmanID == id).ToList();
+            return View(degerler);
         }
     }
 }

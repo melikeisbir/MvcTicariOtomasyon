@@ -21,6 +21,7 @@ namespace MvcTicariOtomasyon.Models.Class
         [StringLength(250)]
         public string PersonelGorsel { get; set; }
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
-        public Department Department { get; set; }
+        public int DepartmanID { get; set; }
+        public virtual Department Department { get; set; }
     }
 }
