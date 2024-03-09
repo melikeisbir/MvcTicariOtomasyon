@@ -13,7 +13,7 @@ namespace MvcTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var degerler = c.Departments.ToList();
+            var degerler = c.Departments.Where(x => x.Durum == true).ToList();
             return View(degerler);
         }
 
@@ -27,6 +27,13 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult DepartmanEkle(Department d)
         {
             c.Departments.Add(d);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult DepartmanSil(int id)
+        {
+            var dep = c.Departments.Find(id);
+            dep.Durum = false;
             c.SaveChanges();
             return RedirectToAction("Index");
         }
