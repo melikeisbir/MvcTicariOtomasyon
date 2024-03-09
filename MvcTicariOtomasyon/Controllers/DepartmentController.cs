@@ -16,5 +16,19 @@ namespace MvcTicariOtomasyon.Controllers
             var degerler = c.Departments.ToList();
             return View(degerler);
         }
+
+        [HttpGet]
+        public ActionResult DepartmanEkle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DepartmanEkle(Department d)
+        {
+            c.Departments.Add(d);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

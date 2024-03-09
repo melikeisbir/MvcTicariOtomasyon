@@ -226,6 +226,7 @@
     <Content Include="Views\Product\YeniUrun.cshtml" />
     <Content Include="Views\Product\UrunGetir.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\DepartmanEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
