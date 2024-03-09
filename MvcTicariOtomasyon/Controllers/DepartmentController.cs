@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Schema;
 
 namespace MvcTicariOtomasyon.Controllers
 {
@@ -58,7 +59,10 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanPersonelSatis(int id)
         {
-            return View();
+            var degerler = c.SalesTransactions.Where(x=>x.PersonelID==id).ToList();
+            var per = c.Employees.Where(x=>x.PersonelID == id).Select(y=>y.PersonelAd + " " + y.PersonelSoyad).FirstOrDefault();
+            ViewBag.dpers = per;
+            return View(degerler);
         }
     }
 }
