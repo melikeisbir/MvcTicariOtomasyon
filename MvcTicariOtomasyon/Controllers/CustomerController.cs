@@ -16,5 +16,17 @@ namespace MvcTicariOtomasyon.Controllers
             var degerler = c.Customers.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult YeniCari()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniCari(Customer p)
+        {
+            c.Customers.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
