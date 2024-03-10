@@ -13,7 +13,7 @@ namespace MvcTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var degerler = c.Customers.ToList();
+            var degerler = c.Customers.Where(x=>x.Durum == true).ToList();
             return View(degerler);
         }
         [HttpGet]
@@ -24,7 +24,15 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniCari(Customer p)
         {
+            p.Durum = true;
             c.Customers.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult CariSil(int id)
+        {
+            var cr = c.Customers.Find(id);
+            cr.Durum = false;
             c.SaveChanges();
             return RedirectToAction("Index");
         }
