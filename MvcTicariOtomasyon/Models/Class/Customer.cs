@@ -12,10 +12,11 @@ namespace MvcTicariOtomasyon.Models.Class
         [Key]
         public int CariID { get; set; }
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter yazabilirsiniz.")]
         public string CariAd { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz.")]
         public string CariSoyad { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(13)]
