@@ -1,0 +1,37 @@
+﻿@using MvcTicariOtomasyon.Models.Class
+@model List<SalesTransaction>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SatisID</td>
+            <td>@item.Product.UrunAd</td>
+            <td>@item.Customer.CariAd @item.Customer.CariSoyad</td>
+            <td>@item.Employee.PersonelAd @item.Employee.PersonelSoyad</td>
+            <td>@item.Adet</td>
+            <td>@item.Fiyat</td>
+            <td>@item.ToplamTutar</td>
+            <td>@item.Tarih</td>
+            <td><a href="/Sale//@item.SatisID" class="btn btn-outline-warning">Güncelle</a></td>
+            <td><a href="/Sale//@item.SatisID" class="btn btn-outline-group" style="background-color:lightsteelblue; color:white">Detay</a></td>
+        </tr>
+    }
+</table>
+<a href="/Sale/YeniSatis/" class="btn btn-outline-primary">Yeni Satış Yap</a>
