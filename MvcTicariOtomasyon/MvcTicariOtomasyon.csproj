@@ -242,6 +242,7 @@
     <Content Include="Views\Employee\PersonelGetir.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Sale\YeniSatis.cshtml" />
+    <Content Include="Views\Sale\SatisGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
