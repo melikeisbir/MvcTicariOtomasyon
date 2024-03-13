@@ -1,0 +1,39 @@
+﻿@using MvcTicariOtomasyon.Models.Class
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FaturaID</td>
+            <td>@item.FaturaSeriNo</td>
+            <td>@item.FaturaSiraNo</td>
+            <td>@item.VergiDairesi</td>
+            <td>@item.Tarih</td>
+            <td>@item.Saat</td>
+            <td>100</td>
+            <td>@item.TeslimEden</td>
+            <td>@item.TeslimAlan</td>
+            <td><a href="/Invoice/FaturaGetir/@item.FaturaID" class="btn btn-outline-warning">Güncelle</a></td>
+            <td><a href="/Invoice//@item.FaturaID" class="btn btn-outline-group" style="background-color:lightsteelblue; color:white">Detay</a></td>
+        </tr>
+    }
+</table>
+<a href="/Invoice/FaturaEkle/" class="btn btn-outline-primary">Fatura Ekle</a>
