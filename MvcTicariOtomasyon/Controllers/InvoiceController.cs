@@ -33,5 +33,18 @@ namespace MvcTicariOtomasyon.Controllers
             var fatura = c.Invoices.Find(id);
             return View("FaturaGetir", fatura);
         }
+        public ActionResult FaturaGuncelle(Invoice f)
+        {
+            var fatura = c.Invoices.Find(f.FaturaID);
+            fatura.FaturaSeriNo = f.FaturaSeriNo;
+            fatura.FaturaSiraNo = f.FaturaSiraNo;
+            fatura.Tarih = f.Tarih;
+            fatura.Saat = f.Saat;
+            fatura.VergiDairesi = f.VergiDairesi;
+            fatura.TeslimAlan = f.TeslimAlan;
+            fatura.TeslimEden = f.TeslimEden;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
