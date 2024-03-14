@@ -28,5 +28,10 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult FaturaGetir(int id)
+        {
+            var fatura = c.Invoices.Find(id);
+            return View("FaturaGetir", fatura);
+        }
     }
 }
