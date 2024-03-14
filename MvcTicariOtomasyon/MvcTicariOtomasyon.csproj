@@ -486,6 +486,7 @@
     <Content Include="Views\Invoice\FaturaEkle.cshtml" />
     <Content Include="Views\Invoice\FaturaGetir.cshtml" />
     <Content Include="Views\Invoice\FaturaDetay.cshtml" />
+    <Content Include="Views\Invoice\YeniKalem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

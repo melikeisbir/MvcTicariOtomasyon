@@ -51,5 +51,16 @@ namespace MvcTicariOtomasyon.Controllers
             var degerler = c.InvoiceItems.Where(x => x.FaturaID == id).ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult YeniKalem()
+        {
+            return View();
+        }
+        public ActionResult YeniKalem(InvoiceItem p)
+        {
+            c.InvoiceItems.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
