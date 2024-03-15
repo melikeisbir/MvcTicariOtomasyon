@@ -29,6 +29,21 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d7 = deger7;
             var deger8 = (from x in c.Products orderby x.SatisFiyat descending select x.UrunAd).FirstOrDefault();
             ViewBag.d8 = deger8;
+            var deger9 = (from x in c.Products orderby x.SatisFiyat ascending select x.UrunAd).FirstOrDefault();
+            ViewBag.d9 = deger9;
+            var deger10 = c.Products.Count(x => x.UrunAd == "Buzdolabı").ToString();
+            ViewBag.d10 = deger10;
+            var deger11 = c.Products.Count(x => x.UrunAd == "Laptop").ToString();
+            ViewBag.d11 = deger11;
+
+            var deger14 = c.SalesTransactions.Sum(x => x.ToplamTutar).ToString();
+            ViewBag.d14 = deger14;
+
+            DateTime bugun = DateTime.Today;
+            var deger15 = c.SalesTransactions.Count(x => x.Tarih == bugun).ToString();
+            ViewBag.d15 = deger15;
+            var deger16 = c.SalesTransactions.Where(x => x.Tarih == bugun).Sum(y=>y.ToplamTutar).ToString();
+            ViewBag.d16 = deger16;
             return View();
         }
     }
