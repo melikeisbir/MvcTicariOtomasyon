@@ -35,15 +35,18 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d10 = deger10;
             var deger11 = c.Products.Count(x => x.UrunAd == "Laptop").ToString();
             ViewBag.d11 = deger11;
-
+            var deger12 = c.Products.GroupBy(x => x.UrunMarka).OrderByDescending(z=>z.Count()).Select(y=>y.Key).FirstOrDefault(); 
+            ViewBag.d12 = deger12;
+            var deger13 = c.Products.Where (u=>u.UrunID == (c.SalesTransactions.GroupBy(x => x.UrunID).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault())).Select(k=>k.UrunAd).FirstOrDefault();
+            ViewBag.d13 = deger13;
             var deger14 = c.SalesTransactions.Sum(x => x.ToplamTutar).ToString();
             ViewBag.d14 = deger14;
 
             DateTime bugun = DateTime.Today;
             var deger15 = c.SalesTransactions.Count(x => x.Tarih == bugun).ToString();
             ViewBag.d15 = deger15;
-            var deger16 = c.SalesTransactions.Where(x => x.Tarih == bugun).Sum(y=>y.ToplamTutar).ToString();
-            ViewBag.d16 = deger16;
+            //var deger16 = c.SalesTransactions.Where(x => x.Tarih == bugun).Sum(y => y.ToplamTutar).ToString();
+            //ViewBag.d16 = deger16;
             return View();
         }
     }
