@@ -144,9 +144,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class\Admin.cs" />
     <Compile Include="Models\Class\Category.cs" />
+    <Compile Include="Models\Class\Class1.cs" />
     <Compile Include="Models\Class\Context.cs" />
     <Compile Include="Models\Class\Customer.cs" />
     <Compile Include="Models\Class\Department.cs" />
+    <Compile Include="Models\Class\Detail.cs" />
     <Compile Include="Models\Class\Employee.cs" />
     <Compile Include="Models\Class\Expense.cs" />
     <Compile Include="Models\Class\Invoice.cs" />
