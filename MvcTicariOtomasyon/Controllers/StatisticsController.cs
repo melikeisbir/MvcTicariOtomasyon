@@ -51,7 +51,14 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public ActionResult KolayTablolar()
         {
-            return View();
+            var sorgu = from x in c.Customers
+                        group x by x.CariSehir into g
+                        select new ClassGroup
+                        {
+                            Sehir = g.Key,
+                            Sayi = g.Count()
+                        };
+            return View(sorgu.ToList());
         }
     }
 }
