@@ -146,6 +146,7 @@
     <Compile Include="Models\Class\Category.cs" />
     <Compile Include="Models\Class\Class1.cs" />
     <Compile Include="Models\Class\ClassGroup.cs" />
+    <Compile Include="Models\Class\ClassGroup2.cs" />
     <Compile Include="Models\Class\Context.cs" />
     <Compile Include="Models\Class\Customer.cs" />
     <Compile Include="Models\Class\Department.cs" />
@@ -2789,6 +2790,7 @@
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Statistics\KolayTablolar.cshtml" />
+    <Content Include="Views\Statistics\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

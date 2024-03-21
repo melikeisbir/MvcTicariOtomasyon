@@ -60,5 +60,16 @@ namespace MvcTicariOtomasyon.Controllers
                         };
             return View(sorgu.ToList());
         }
+        public PartialViewResult Partial1()
+        {
+            var sorgu2 = from x in c.Employees
+                         group x by x.DepartmanID into g
+                         select new ClassGroup2
+                         {
+                             Departman = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu2.ToList());
+        }
     }
 }
