@@ -147,6 +147,7 @@
     <Compile Include="Models\Class\Class1.cs" />
     <Compile Include="Models\Class\ClassGroup.cs" />
     <Compile Include="Models\Class\ClassGroup2.cs" />
+    <Compile Include="Models\Class\ClassGroup3.cs" />
     <Compile Include="Models\Class\Context.cs" />
     <Compile Include="Models\Class\Customer.cs" />
     <Compile Include="Models\Class\Department.cs" />
@@ -2793,6 +2794,7 @@
     <Content Include="Views\Statistics\Partial1.cshtml" />
     <Content Include="Views\Statistics\Partial2.cshtml" />
     <Content Include="Views\Statistics\Partial3.cshtml" />
+    <Content Include="Views\Statistics\Partial4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

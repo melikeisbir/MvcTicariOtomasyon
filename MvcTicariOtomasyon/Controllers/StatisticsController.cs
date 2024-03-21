@@ -81,5 +81,16 @@ namespace MvcTicariOtomasyon.Controllers
             var sorgu = c.Products.ToList();
             return PartialView(sorgu);
         }
+        public PartialViewResult Partial4()
+        {
+            var sorgu = from x in c.Products
+                         group x by x.UrunMarka into g
+                         select new ClassGroup3
+                         {
+                             Marka = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu.ToList());
+        }
     }
 }
