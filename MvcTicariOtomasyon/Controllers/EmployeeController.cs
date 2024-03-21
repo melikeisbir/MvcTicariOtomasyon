@@ -57,5 +57,9 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult PersonelListe()
+        {
+            return View();
+        }
     }
 }
