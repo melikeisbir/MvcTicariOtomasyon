@@ -71,5 +71,10 @@ namespace MvcTicariOtomasyon.Controllers
                          };
             return PartialView(sorgu2.ToList());
         }
+        public PartialViewResult Partial2()
+        {
+            var sorgu = c.Customers.ToList();
+            return PartialView(sorgu);
+        }
     }
 }

@@ -2791,6 +2791,7 @@
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Statistics\KolayTablolar.cshtml" />
     <Content Include="Views\Statistics\Partial1.cshtml" />
+    <Content Include="Views\Statistics\Partial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
