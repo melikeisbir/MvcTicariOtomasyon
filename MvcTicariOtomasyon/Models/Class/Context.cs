@@ -19,5 +19,6 @@ namespace MvcTicariOtomasyon.Models.Class
         public DbSet<Product> Products { get; set; }
         public DbSet<SalesTransaction> SalesTransactions { get; set; }
         public DbSet<Detail> Details { get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; }
     }
 }
