@@ -5,30 +5,34 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <p>
+        Ürün Adı: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<br />
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
         <th>ÜRÜN</th>
         <th>MARKA</th>
         <th>STOK</th>
         <th>ALIŞ FİYAT</th>
         <th>SATIŞ FİYAT</th>
         <th>KATEGORİ</th>
-        <th>GÖRSEL</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.UrunID</td>
             <td>@item.UrunAd</td>
             <td>@item.UrunMarka</td>
             <td>@item.Stok</td>
-            <td>@item.AlisFiyat</td>
-            <td>@item.SatisFiyat</td>
+            <td>@item.AlisFiyat₺</td>
+            <td>@item.SatisFiyat₺</td>
             <td>@item.Category.KategoriAd</td>
-            <td>@item.UrunGorsel</td>
             <td><a href="/Product/UrunSil/@item.UrunID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/Product/UrunGetir/@item.UrunID" class="btn btn-outline-warning">Güncelle</a></td>
         </tr>
