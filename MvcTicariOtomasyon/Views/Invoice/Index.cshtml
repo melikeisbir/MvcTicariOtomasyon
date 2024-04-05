@@ -8,27 +8,25 @@
 <table class="table table-bordered" style="margin-top:20px;">
     <tr>
         <th>Seri Sıra No</th>
-        <th>Vergi Dairesi</th>
         <th>Tarih</th>
         <th>Saat</th>
-        <th>Teslim Eden</th>
-        <th>Teslim Alan</th>
         <th>Toplam</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
+        <th>Popup Liste</th>
+        <th>Yeni Kalem</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.FaturaSeriNo @item.FaturaSiraNo</td>
-            <td>@item.VergiDairesi</td>
             <td>@item.Tarih</td>
             <td>@item.Saat</td>
-            <td>@item.TeslimEden</td>
-            <td>@item.TeslimAlan</td>
             <td>@item.Toplam₺</td>
             <td><a href="/Invoice/FaturaGetir/@item.FaturaID" class="btn btn-outline-warning">Güncelle</a></td>
             <td><a href="/Invoice/FaturaDetay/@item.FaturaID" class="btn btn-outline-group" style="background-color:lightsteelblue; color:white">Detay</a></td>
+            <td><a href="/Invoice/FaturaDetay/@item.FaturaID" class="btn btn-outline-group" style="background-color:gainsboro">Popup</a></td>
+            <td><a href="/Invoice/FaturaDetay/@item.FaturaID" class="btn btn-outline-group" style="background-color:darkgrey; color:white">Kalem</a></td>
         </tr>
     }
 </table>
