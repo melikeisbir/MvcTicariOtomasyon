@@ -7,9 +7,7 @@
 
 <table class="table table-bordered" style="margin-top:20px;">
     <tr>
-        <th>ID</th>
-        <th>Seri No</th>
-        <th>Sıra No</th>
+        <th>Seri Sıra No</th>
         <th>Vergi Dairesi</th>
         <th>Tarih</th>
         <th>Saat</th>
@@ -22,15 +20,13 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.FaturaID</td>
-            <td>@item.FaturaSeriNo</td>
-            <td>@item.FaturaSiraNo</td>
+            <td>@item.FaturaSeriNo @item.FaturaSiraNo</td>
             <td>@item.VergiDairesi</td>
             <td>@item.Tarih</td>
             <td>@item.Saat</td>
             <td>@item.TeslimEden</td>
             <td>@item.TeslimAlan</td>
-            <td>@item.Toplam</td>
+            <td>@item.Toplam₺</td>
             <td><a href="/Invoice/FaturaGetir/@item.FaturaID" class="btn btn-outline-warning">Güncelle</a></td>
             <td><a href="/Invoice/FaturaDetay/@item.FaturaID" class="btn btn-outline-group" style="background-color:lightsteelblue; color:white">Detay</a></td>
         </tr>
