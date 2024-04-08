@@ -45,8 +45,8 @@ namespace MvcTicariOtomasyon.Controllers
             DateTime bugun = DateTime.Today;
             var deger15 = c.SalesTransactions.Count(x => x.Tarih == bugun).ToString();
             ViewBag.d15 = deger15;
-            //var deger16 = c.SalesTransactions.Where(x => x.Tarih == bugun).Sum(y => y.ToplamTutar).ToString();
-            //ViewBag.d16 = deger16;
+            var deger16 = c.SalesTransactions.Where(x => x.Tarih == bugun).Sum(y => (decimal?)y.ToplamTutar).ToString();
+            ViewBag.d16 = deger16;
             return View();
         }
         public ActionResult KolayTablolar()
