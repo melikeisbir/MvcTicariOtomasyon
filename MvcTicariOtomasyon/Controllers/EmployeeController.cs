@@ -58,6 +58,14 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public ActionResult PersonelGuncelle(Employee p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName); //requestte tutulan dosya adını al
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel = "/Image/" + dosyaadi + uzanti;
+            }
             var prsn = c.Employees.Find(p.PersonelID);
             prsn.PersonelAd = p.PersonelAd;
             prsn.PersonelGorsel = p.PersonelGorsel;
