@@ -17,7 +17,7 @@
     @Html.TextBoxFor(x => x.CariID, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Adet)
-    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <input type="number" class="form-control" max="10" min="1" placeholder="Adet girin"/>
     <br />
     @Html.LabelFor(x => x.Fiyat)
     <input type="text" name="Fiyat" value="@ViewBag.dgr2" class="form-control" />
