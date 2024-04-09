@@ -8,7 +8,7 @@
 <br />
 <form class="form-group" method="post">
     @Html.LabelFor(x => x.UrunID)
-    @Html.TextBoxFor(x => x.UrunID, new { @class = "form-control" })
+    <input type="text" name="UrunID" value="@ViewBag.dgr1" class="form-control" readonly />
     <br />
     @Html.LabelFor(x => x.PersonelID)
     @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
@@ -20,7 +20,7 @@
     @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Fiyat)
-    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <input type="text" name="Fiyat" value="@ViewBag.dgr2" class="form-control" />
     <br />
     @Html.LabelFor(x => x.ToplamTutar)
     @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })

@@ -78,7 +78,7 @@ namespace MvcTicariOtomasyon.Controllers
             return View(degerler);
         }
         [HttpGet]
-        public ActionResult SatisYap()
+        public ActionResult SatisYap(int id)
         {
             List<SelectListItem> deger3 = (from x in c.Employees.ToList()  //personeller
                                            select new SelectListItem
@@ -87,6 +87,9 @@ namespace MvcTicariOtomasyon.Controllers
                                                Value = x.PersonelID.ToString()
                                            }).ToList();
             ViewBag.dgr3 = deger3;
+            var deger1 = c.Products.Find(id); //ürün tablosundan id'yi bul
+            ViewBag.dgr1 = deger1.UrunID; //ürün id'yi yazdır
+            ViewBag.dgr2 = deger1.SatisFiyat;
             return View();
         }
         [HttpPost]
