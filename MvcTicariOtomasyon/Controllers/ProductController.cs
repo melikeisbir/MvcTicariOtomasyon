@@ -95,7 +95,10 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult SatisYap(SalesTransaction p)
         {
-            return View();
+            p.Tarih = DateTime.Parse(DateTime.Now.ToShortTimeString());
+            c.SalesTransactions.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index", "Sale");
         }
     }
 }
