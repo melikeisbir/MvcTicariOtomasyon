@@ -30,3 +30,17 @@
     <br />
     <button class="btn btn-outline-info">Satış Yap</button>
 </form>
+<br />
+<input type="text" id="txt1" onkeyup="sum();" />
+<input type="text" id="txt2" onkeyup="sum();" /> @*klavyede işlem yapıldığında*@
+<input type="text" id="txt3" />
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value; //sayfa içerisinde su id'li değeri alacaksın
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) + parseInt(sayi2); // dönüşüm uygulayacak
+        if (!isNaN(sonuc)) { //sonuc değişkeni null değilse
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>
