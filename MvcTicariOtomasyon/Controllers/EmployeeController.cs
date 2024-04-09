@@ -1,6 +1,7 @@
 ﻿using MvcTicariOtomasyon.Models.Class;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,7 +18,7 @@ namespace MvcTicariOtomasyon.Controllers
             return View(degerler);
         }
         [HttpGet]
-        public ActionResult PersonelEkle() 
+        public ActionResult PersonelEkle()
         {
             List<SelectListItem> deger1 = (from x in c.Departments.ToList()
                                            select new SelectListItem
@@ -31,6 +32,14 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Employee p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName); //requestte tutulan dosya adını al
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel = "/Image/" + dosyaadi + uzanti;
+            }
             c.Employees.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
