@@ -1,0 +1,32 @@
+﻿@model MvcTicariOtomasyon.Models.Class.SalesTransaction
+@{
+    ViewBag.Title = "SatisYap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Yap</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.UrunID)
+    @Html.TextBoxFor(x => x.UrunID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelID)
+    @Html.TextBoxFor(x => x.PersonelID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariID)
+    @Html.TextBoxFor(x => x.CariID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adet)
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ToplamTutar)
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">Satış Yap</button>
+</form>

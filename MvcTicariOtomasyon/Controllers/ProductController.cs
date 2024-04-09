@@ -77,5 +77,15 @@ namespace MvcTicariOtomasyon.Controllers
             var degerler = c.Products.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult SatisYap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SatisYap(SalesTransaction p)
+        {
+            return View();
+        }
     }
 }
