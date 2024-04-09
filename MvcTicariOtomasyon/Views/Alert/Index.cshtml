@@ -8,8 +8,11 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <br />
 <br />
-<button class="btn btn-primary" id="btn1">Button1</button>
-<button class="btn btn-warning" id="btn2">Button2</button>
+<button class="btn btn-default" style="background-color:darkviolet; color:white" id="btn1">Button1</button>
+<button class="btn btn-default" style="background-color:fuchsia; color:white" id="btn2">Button2</button>
+<button class="btn btn-default" style="background-color:indigo; color:white" id="btn3">Button3</button>
+<button class="btn btn-default" style="background-color:purple; color:white" id="btn4">Button4</button>
+<button class="btn btn-default" style="background-color:mediumpurple; color:white" id="btn5">Button5</button>
 
 <script>
     $('#btn1').click(function () {
@@ -19,5 +22,38 @@
 <script>
     $('#btn2').click(function () {
         swal("Burası başlık", "...Burası metin");
+    });
+</script>
+<script>
+    $('#btn3').click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    });
+</script>
+<script>
+    $('#btn4').click(function () {
+        swal("Click on either the button or outside the modal.")
+            .then((value) => {
+                swal(`The returned value is: ${value}`);
+            });
+    });
+</script>
+<script>
+    $('#btn5').click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
     });
 </script>
