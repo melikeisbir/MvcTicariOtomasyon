@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlertController.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\CustomerPanelController.cs" />
@@ -2871,6 +2872,7 @@
     <Content Include="Views\CustomerPanel\Siparislerim.cshtml" />
     <Content Include="Views\Alert\Index.cshtml" />
     <Content Include="Views\Product\SatisYap.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
