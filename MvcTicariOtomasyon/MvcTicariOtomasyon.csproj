@@ -153,6 +153,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class\Admin.cs" />
+    <Compile Include="Models\Class\CargoDetail.cs" />
     <Compile Include="Models\Class\Category.cs" />
     <Compile Include="Models\Class\Class1.cs" />
     <Compile Include="Models\Class\ClassGroup.cs" />
