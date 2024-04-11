@@ -1,0 +1,27 @@
+﻿@model MvcTicariOtomasyon.Models.Class.CargoDetail
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kargo Bilgisi Sayfası</h2>
+<br />
+<form cllass="form-group" method="post">
+    @Html.LabelFor(x => x.TakipKodu)
+    @Html.TextBoxFor(x => x.TakipKodu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Personel)
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Alici)
+    @Html.TextBoxFor(x => x.Alici, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    <input class="form-control" type="date" name="Tarih" />
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+</form>
