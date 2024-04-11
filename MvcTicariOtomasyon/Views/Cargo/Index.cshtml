@@ -19,6 +19,7 @@
         <th>Personel</th>
         <th>Alıcı</th>
         <th>Tarih</th>
+        <th>Takip Kodu</th>
         <th>Detaylar</th>
     </tr>
     @foreach (var item in Model)
@@ -27,6 +28,7 @@
             <td> @item.Personel</td>
             <td>@item.Alici</td>
             <td>@item.Tarih</td>
+            <td>@item.TakipKodu</td>
             <td><a href="/Cargo/CargoDetail/@item.KargoDetayID" class="btn btn-outline-group" style="background-color:lightsteelblue; color:white">Detay</a></td>
         </tr>
     }
