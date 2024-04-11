@@ -44,5 +44,11 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KargoTakip(string id)
+        {
+           // p = "624C38H70A";
+            var degerler = c.CargoTrackings.Where(x => x.TakipKodu == id).ToList(); //route config ayarından dolayı TakipKodu = id oldu
+            return View(degerler);
+        }
     }
 }
