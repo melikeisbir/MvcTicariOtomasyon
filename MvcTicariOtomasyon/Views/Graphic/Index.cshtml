@@ -12,6 +12,7 @@
     grafik.AddLegend(title: "Değerler");
     grafik.AddSeries(
         name: "Veriler",
+        chartType:"Bar", //bubble, pie, doughnut, area, bar
         xValue: new[] { "Beyaz Eşya", "Televizyon", "Bilgisayar", "Küçük Ev Aletleri" },
         yValues: new[] { 500, 250, 340, 620 });
     grafik.Write();
