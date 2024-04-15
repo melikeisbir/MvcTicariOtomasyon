@@ -2882,6 +2882,7 @@
     <Content Include="Views\Cargo\KargoTakip.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
     <Content Include="Views\Graphic\Index.cshtml" />
+    <Content Include="Views\Graphic\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
