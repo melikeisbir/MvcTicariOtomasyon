@@ -87,13 +87,21 @@ namespace MvcTicariOtomasyon.Controllers
             List<Class3> snf = new List<Class3>();
             using (var context = new Context()) //ihtiyacı oldugunda dbcontext kullansın
             {
-                snf = c.Products.Select(x=>new Class3
+                snf = c.Products.Select(x => new Class3
                 {
                     urn = x.UrunAd,
                     stk = x.Stok
-                }).ToList();    
+                }).ToList();
             }
             return snf;
+        }
+        public ActionResult Index6()
+        {
+            return View();
+        }
+        public ActionResult Index7()
+        {
+            return View();
         }
     }
 }

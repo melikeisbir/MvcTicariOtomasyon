@@ -2888,6 +2888,8 @@
     <Content Include="Views\Graphic\Index3.cshtml" />
     <Content Include="Views\Graphic\Index4.cshtml" />
     <Content Include="Views\Graphic\Index5.cshtml" />
+    <Content Include="Views\Graphic\Index6.cshtml" />
+    <Content Include="Views\Graphic\Index7.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

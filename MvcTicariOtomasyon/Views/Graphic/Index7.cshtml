@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Index5";
+    ViewBag.Title = "Index7";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <!DOCTYPE html>
 <br />
-<h3>Ürün - Stok Grafiği Pie</h3>
+<h3>Ürün - Stok Grafiği Column</h3>
 <html lang="en">
 <head>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
@@ -50,13 +50,13 @@
                 bar: { groupWidth: "20%" },
             };
 
-            var columnChart = new google.visualization.PieChart(document //column chart | line chart | pie chart
-                .getElementById('Piechart_div'));
+            var columnChart = new google.visualization.ColumnChart(document //column chart | line chart | pie chart
+                .getElementById('Columnchart_div'));
             columnChart.draw(data, columnChartOptions);
         }
     </script>
 </head>
 <body>
-    <div id="Piechart_div"></div>
+    <div id="Columnchart_div"></div>
 </body>
 </html>
