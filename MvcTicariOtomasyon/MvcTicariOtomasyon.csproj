@@ -168,6 +168,7 @@
     <Compile Include="Models\Class\Category.cs" />
     <Compile Include="Models\Class\Class1.cs" />
     <Compile Include="Models\Class\Class2.cs" />
+    <Compile Include="Models\Class\Class3.cs" />
     <Compile Include="Models\Class\ClassGroup.cs" />
     <Compile Include="Models\Class\ClassGroup2.cs" />
     <Compile Include="Models\Class\ClassGroup3.cs" />
@@ -2886,6 +2887,7 @@
     <Content Include="Views\Graphic\Index2.cshtml" />
     <Content Include="Views\Graphic\Index3.cshtml" />
     <Content Include="Views\Graphic\Index4.cshtml" />
+    <Content Include="Views\Graphic\Index5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -46,7 +46,7 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public List<Class2> UrunListesi()
         {
-            List<Class2> snf= new List<Class2>();
+            List<Class2> snf = new List<Class2>();
             snf.Add(new Class2()
             {
                 urunad = "Bilgisayar",
@@ -72,6 +72,27 @@ namespace MvcTicariOtomasyon.Controllers
                 urunad = "Mobil Cihazlar",
                 stok = 90
             });
+            return snf;
+        }
+        public ActionResult Index5()
+        {
+            return View();
+        }
+        public ActionResult VisualizeUrunResult2()
+        {
+            return Json(UrunListesi2(), JsonRequestBehavior.AllowGet);
+        }
+        public List<Class3> UrunListesi2()
+        {
+            List<Class3> snf = new List<Class3>();
+            using (var context = new Context()) //ihtiyacı oldugunda dbcontext kullansın
+            {
+                snf = c.Products.Select(x=>new Class3
+                {
+                    urn = x.UrunAd,
+                    stk = x.Stok
+                }).ToList();    
+            }
             return snf;
         }
     }
