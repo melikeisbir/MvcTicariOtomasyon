@@ -13,7 +13,7 @@ namespace MvcTicariOtomasyon.Models.Class
         public int MesajID { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
-        public string Gönderici { get; set; } 
+        public string Gonderici { get; set; } 
 
         [Column(TypeName = "Varchar")]
         [StringLength(50)]

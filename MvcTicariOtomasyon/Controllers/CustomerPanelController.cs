@@ -29,7 +29,8 @@ namespace MvcTicariOtomasyon.Controllers
         
         public ActionResult GelenMesajlar()
         {
-            return View();
+            var mesajlar = c.Messages.ToList();
+            return View(mesajlar);
         }
         //[HttpGet]
         //public ActionResult YeniMesaj()
