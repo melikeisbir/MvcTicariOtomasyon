@@ -180,6 +180,7 @@
     <Compile Include="Models\Class\Expense.cs" />
     <Compile Include="Models\Class\Invoice.cs" />
     <Compile Include="Models\Class\InvoiceItem.cs" />
+    <Compile Include="Models\Class\Message.cs" />
     <Compile Include="Models\Class\Product.cs" />
     <Compile Include="Models\Class\SalesTransaction.cs" />
     <Compile Include="Models\Class\ToDoList.cs" />
