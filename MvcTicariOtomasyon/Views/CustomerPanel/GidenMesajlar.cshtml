@@ -1,7 +1,7 @@
 ﻿@using MvcTicariOtomasyon.Models.Class
 @model List<Message>
 @{
-    ViewBag.Title = "GelenMesajlar";
+    ViewBag.Title = "GidenMesajlar";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
 
@@ -64,7 +64,7 @@
                             <li class="nav-item">
                                 <a href="/CustomerPanel/GidenMesajlar/" class="nav-link">
                                     <i class="far fa-envelope"></i> Gönderdiğim Mesajlar
-                                    <span class="badge bg-danger float-right">@ViewBag.d1</span>
+                                    <span class="badge bg-danger float-right">@ViewBag.d2</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -178,7 +178,7 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="read-mail.html">@item.Gonderici</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@item.Alici</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.Konu</b> - @item.Icerik
                                             </td>
