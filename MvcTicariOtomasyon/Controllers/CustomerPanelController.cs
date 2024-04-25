@@ -49,6 +49,10 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public ActionResult MesajDetay()
         {
+            var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.Messages.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
             return View();
         }
         //[HttpGet]
