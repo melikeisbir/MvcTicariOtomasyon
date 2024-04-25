@@ -47,13 +47,15 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
-        public ActionResult MesajDetay()
-        {
+        public ActionResult MesajDetay(int id)
+        { 
+            var degerler = c.Messages.Where(x=>x.MesajID== id).ToList();
+            var mail = (string)Session["CariMail"];
             var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelensayisi;
             var gidensayisi = c.Messages.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidensayisi;
-            return View();
+            return View(degerler);
         }
         //[HttpGet]
         //public ActionResult YeniMesaj()
