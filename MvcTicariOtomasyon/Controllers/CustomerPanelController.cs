@@ -47,6 +47,10 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        public ActionResult MesajDetay()
+        {
+            return View();
+        }
         //[HttpGet]
         //public ActionResult YeniMesaj()
         //{
