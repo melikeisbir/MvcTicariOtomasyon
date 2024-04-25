@@ -2895,6 +2895,7 @@
     <Content Include="Views\CustomerPanel\GelenMesajlar.cshtml" />
     <Content Include="Views\CustomerPanel\GidenMesajlar.cshtml" />
     <Content Include="Views\CustomerPanel\MesajDetay.cshtml" />
+    <Content Include="Views\CustomerPanel\YeniMesaj.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

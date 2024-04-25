@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
 
@@ -57,15 +58,15 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(degerler);
         }
-        //[HttpGet]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniMesaj(Message m)
+        {
+            return View();
+        }
     }
 }
