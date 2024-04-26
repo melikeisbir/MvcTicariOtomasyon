@@ -31,7 +31,7 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"]; //sisteme giriş yapan mail adresini tutacak
-            var mesajlar = c.Messages.Where(x => x.Alici == mail).ToList();
+            var mesajlar = c.Messages.Where(x => x.Alici == mail).OrderByDescending(x=>x.MesajID).ToList();
             var gidensayisi = c.Messages.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidensayisi;
             var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
@@ -41,7 +41,7 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"]; 
-            var mesajlar = c.Messages.Where(x => x.Gonderici == mail).ToList();
+            var mesajlar = c.Messages.Where(x => x.Gonderici == mail).OrderByDescending(x => x.MesajID).ToList();
             var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelensayisi;
             var gidensayisi = c.Messages.Count(x => x.Gonderici == mail).ToString();
