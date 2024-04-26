@@ -61,11 +61,21 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult YeniMesaj()
         {
+            var mail = (string)Session["CariMail"];
+            var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.Messages.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
             return View();
         }
         [HttpPost]
         public ActionResult YeniMesaj(Message m)
         {
+            var mail = (string)Session["CariMail"];
+            m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            m.Gonderici = mail;
+            c.Messages.Add(m);
+            c.SaveChanges();
             return View();
         }
     }
