@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcTicariOtomasyon.Controllers
 {
@@ -20,6 +21,7 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.m = mail;
             return View(degerler);
         }
+        [Authorize]
         public ActionResult Siparislerim()
         {
             var mail = (string)Session["CariMail"];
@@ -27,7 +29,7 @@ namespace MvcTicariOtomasyon.Controllers
             var degerler = c.SalesTransactions.Where(x => x.CariID == id).ToList();
             return View(degerler);
         }
-
+        [Authorize]
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"]; //sisteme giriş yapan mail adresini tutacak
@@ -38,6 +40,7 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d1 = gelensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"]; 
@@ -48,6 +51,7 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult MesajDetay(int id)
         { 
             var degerler = c.Messages.Where(x=>x.MesajID== id).ToList();
@@ -58,6 +62,7 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(degerler);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult YeniMesaj()
         {
@@ -68,6 +73,7 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult YeniMesaj(Message m)
         {
@@ -78,16 +84,25 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return View();
         }
+        [Authorize]
         public ActionResult KargoTakip(string p)
         {
             var k = from x in c.CargoDetails select x; //gonderilen parametreye gore listeleme
                 k = k.Where(y => y.TakipKodu.Contains(p));
             return View(k.ToList());
         }
+        [Authorize]
         public ActionResult CariKargoTakip(string id)
         {
             var degerler = c.CargoTrackings.Where(x => x.TakipKodu == id).ToList(); //route config ayarından dolayı TakipKodu = id oldu
             return View(degerler);
+        }
+        [Authorize]
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();//sistemi terket
+            return RedirectToAction("Index", "Login");
         }
     }
 }
