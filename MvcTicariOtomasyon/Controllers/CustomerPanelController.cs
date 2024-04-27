@@ -17,7 +17,7 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"]; //cari mailden gelenler session olarak tutulacak
-            var degerler = c.Customers.FirstOrDefault(x => x.CariMail == mail);
+            var degerler = c.Customers.Where(x => x.CariMail == mail).ToList();
             ViewBag.m = mail;
             return View(degerler);
         }
