@@ -84,5 +84,10 @@ namespace MvcTicariOtomasyon.Controllers
                 k = k.Where(y => y.TakipKodu.Contains(p));
             return View(k.ToList());
         }
+        public ActionResult CariKargoTakip(string id)
+        {
+            var degerler = c.CargoTrackings.Where(x => x.TakipKodu == id).ToList(); //route config ayarından dolayı TakipKodu = id oldu
+            return View(degerler);
+        }
     }
 }
