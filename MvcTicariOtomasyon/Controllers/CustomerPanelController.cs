@@ -23,6 +23,10 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.mid = mailid;
             var toplamsatis = c.SalesTransactions.Where(x => x.CariID == mailid).Count();
             ViewBag.toplamsatis = toplamsatis;
+            var toplamtutar = c.SalesTransactions.Where(x => x.CariID == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplamtutar = toplamtutar;
+            var toplamurunsayisi = c.SalesTransactions.Where(x => x.CariID == mailid).Sum(y => y.Adet);
+            ViewBag.toplamurunsayisi = toplamurunsayisi;
             return View(degerler);
         }
         [Authorize]
