@@ -19,6 +19,10 @@ namespace MvcTicariOtomasyon.Controllers
             var mail = (string)Session["CariMail"]; //cari mailden gelenler session olarak tutulacak
             var degerler = c.Customers.Where(x => x.CariMail == mail).ToList();
             ViewBag.m = mail;
+            var mailid = c.Customers.Where(x => x.CariMail == mail).Select(y => y.CariID).FirstOrDefault();
+            ViewBag.mid = mailid;
+            var toplamsatis = c.SalesTransactions.Where(x => x.CariID == mailid).Count();
+            ViewBag.toplamsatis = toplamsatis;
             return View(degerler);
         }
         [Authorize]
@@ -33,7 +37,7 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"]; //sisteme giriş yapan mail adresini tutacak
-            var mesajlar = c.Messages.Where(x => x.Alici == mail).OrderByDescending(x=>x.MesajID).ToList();
+            var mesajlar = c.Messages.Where(x => x.Alici == mail).OrderByDescending(x => x.MesajID).ToList();
             var gidensayisi = c.Messages.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidensayisi;
             var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
@@ -43,7 +47,7 @@ namespace MvcTicariOtomasyon.Controllers
         [Authorize]
         public ActionResult GidenMesajlar()
         {
-            var mail = (string)Session["CariMail"]; 
+            var mail = (string)Session["CariMail"];
             var mesajlar = c.Messages.Where(x => x.Gonderici == mail).OrderByDescending(x => x.MesajID).ToList();
             var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelensayisi;
@@ -53,8 +57,8 @@ namespace MvcTicariOtomasyon.Controllers
         }
         [Authorize]
         public ActionResult MesajDetay(int id)
-        { 
-            var degerler = c.Messages.Where(x=>x.MesajID== id).ToList();
+        {
+            var degerler = c.Messages.Where(x => x.MesajID == id).ToList();
             var mail = (string)Session["CariMail"];
             var gelensayisi = c.Messages.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelensayisi;
@@ -88,7 +92,7 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult KargoTakip(string p)
         {
             var k = from x in c.CargoDetails select x; //gonderilen parametreye gore listeleme
-                k = k.Where(y => y.TakipKodu.Contains(p));
+            k = k.Where(y => y.TakipKodu.Contains(p));
             return View(k.ToList());
         }
         [Authorize]
