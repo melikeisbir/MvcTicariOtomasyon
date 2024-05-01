@@ -17,7 +17,7 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"]; //cari mailden gelenler session olarak tutulacak
-            var degerler = c.Customers.Where(x => x.CariMail == mail).ToList();
+            var degerler = c.Messages.Where(x => x.Alici == mail).ToList();
             ViewBag.m = mail;
             var mailid = c.Customers.Where(x => x.CariMail == mail).Select(y => y.CariID).FirstOrDefault();
             ViewBag.mid = mailid;
@@ -27,6 +27,8 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.toplamtutar = toplamtutar;
             var toplamurunsayisi = c.SalesTransactions.Where(x => x.CariID == mailid).Sum(y => y.Adet);
             ViewBag.toplamurunsayisi = toplamurunsayisi;
+            var adsoyad = c.Customers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
             return View(degerler);
         }
         [Authorize]
