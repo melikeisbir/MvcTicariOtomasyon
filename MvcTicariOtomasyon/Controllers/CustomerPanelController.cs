@@ -114,5 +114,9 @@ namespace MvcTicariOtomasyon.Controllers
             Session.Abandon();//sistemi terket
             return RedirectToAction("Index", "Login");
         }
+        public PartialViewResult Partial1()
+        {
+            return PartialView();
+        }
     }
 }
