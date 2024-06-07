@@ -121,5 +121,10 @@ namespace MvcTicariOtomasyon.Controllers
             var caribul = c.Customers.Find(id);
             return PartialView("Partial1", caribul);
         }
+        public PartialViewResult Partial2()
+        {
+            var veriler = c.Messages.Where(x => x.Gonderici == "admin").ToList();
+            return PartialView(veriler);
+        }
     }
 }

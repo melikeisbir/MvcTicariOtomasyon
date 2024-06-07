@@ -2901,6 +2901,7 @@
     <Content Include="Views\CustomerPanel\KargoTakip.cshtml" />
     <Content Include="Views\CustomerPanel\CariKargoTakip.cshtml" />
     <Content Include="Views\CustomerPanel\Partial1.cshtml" />
+    <Content Include="Views\CustomerPanel\Partial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
