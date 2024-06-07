@@ -116,7 +116,10 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public PartialViewResult Partial1()
         {
-            return PartialView();
+            var mail = (string)Session["CariMail"];
+            var id = c.Customers.Where(x => x.CariMail == mail).Select(y => y.CariID).FirstOrDefault(); //mail değişkenine eşit olan cariidyi getir
+            var caribul = c.Customers.Find(id);
+            return PartialView("Partial1", caribul);
         }
     }
 }
